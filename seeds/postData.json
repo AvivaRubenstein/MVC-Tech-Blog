@@ -1,0 +1,22 @@
+[
+    {
+        "title": "My First Post",
+        "content": "When writing your code, remember to add comments!",
+        "user_id": 1
+    },
+    {
+        "title": "A new post",
+        "content": "Don't forget to seed your database!",
+        "user_id": 2
+    },
+    {
+        "title": "Inspect Tool",
+        "content": "Check out the inspect tool on chrome!",
+        "user_id": 3
+    },
+    {
+        "title": "Bootstrap",
+        "content": "Bootstrap is a CSS framework that could really help with your page design",
+        "user_id": 3
+    }
+]

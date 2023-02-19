@@ -1,0 +1,17 @@
+[
+    {
+        "name" : "Jeremy123",
+        "email" : "jeremy123@gmail.com",
+        "password" : "Placeholder12345"
+    },
+    {
+        "name" : "AllensBread",
+        "email" : "allensbreadshop@gmail.com",
+        "password" : "Placeholder246"
+    },
+    {
+        "name" : "SuperTechGuy",
+        "email" : "techTime@gmail.com",
+        "password" : "Placeholder2468"
+    }
+]
