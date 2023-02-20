@@ -3,6 +3,7 @@ const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 //const withAuth = require('../utils/auth');
 
+//this get request will display all of the existing blog posts on the homepage of the site
 router.get('/', async (req, res) => {
 try{
     const postData = await Post.findAll({
@@ -24,4 +25,38 @@ try{
 }
 });
 
+//this is a route for the users to see their own posts and create new
+//will need to use withAuth middleware to confirm that user is logged in
+// router.get('/', async (req, res) => {
+// try{
+//     const userData = await User.findByPk
+    
+// } catch(err){
+
+// }
+// });
+
 module.exports = router;
+
+
+//TODO:
+//set up login route
+//set up login handlebars page
+//set up login js file to handle login
+//set up withAuth to log user in
+
+//set up js for click event to select one of the blog posts
+//set up route to query for the comments on that post
+//display blog posts and comments on handlebars page
+//set up form to add comment
+//set up js functionality to add comment
+//set up POST request route to add comment
+//force refresh?  show new comments on page
+
+//my dashboard: 
+//set up route for PUT request to update own past posts
+//set up route for DELETE request to delete own posts
+//set up form to update past posts
+//set up button to delete past posts
+
+
