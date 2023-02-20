@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User} = require('../../models/User');
+const {User} = require('../../models');
 
 //this is the post route to create a new user 
 //Route: /api/users/
@@ -7,6 +7,7 @@ const {User} = require('../../models/User');
 //we will pass in the information from the signup form (username, password, etc) as the request body
 router.post('/', async (req, res) => {
 try{
+    console.log("TEST!");
     const newUserData = await User.create(req.body);
 
     req.session.save(()=> {
@@ -20,6 +21,7 @@ try{
 
         //when signup is successful, the login.js file reroutes the user to the /dashboard endpoint
     });
+    console.log("TEST2");
 } catch (err) {
     res.status(400).json(err);
 }

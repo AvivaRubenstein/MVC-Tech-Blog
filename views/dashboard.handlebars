@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+    {{#each user as |user|}}
+    <div class="col">
+      <p>{{user.post.title}}</p>
+      <p>{{user.post.content}}</p>
+      <p>Posted on {{format_date post.date_created}}</p>
+      <p>Posted on {{user.comment.content}}</p>
+    </div>
+    {{/each}}
+  </div>
+</div>
