@@ -18,7 +18,8 @@ try{
     console.log(posts)
     res.render('homepage', {
         posts,
-    //logged_in: req.session.logged_in
+        //we are passing in logged_in status from session so that we can conditionally render the page with a login/logout button
+        logged_in: req.session.logged_in
 });
 } catch(err) {
     res.status(500).json(err);
@@ -35,6 +36,16 @@ try{
 
 // }
 // });
+
+router.get('/login', (req, res)=>{
+//if the user is already logged in, pressing login will reroute them to their personal dashboard 
+if(req.session.logged_in) {
+    res.redirect('/dashboard');
+}
+res.render('login');
+});
+
+
 
 module.exports = router;
 

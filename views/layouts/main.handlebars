@@ -18,12 +18,11 @@
     {{!-- Dashboard is your own posts w the option to add another --}}
     <a class="nav-link" href="/dashboard">Dashboard</a>
     {{!-- when we render the page, we will pass in logged_in status --}}
-    {{!-- {{#if logged_in}}
+    {{#if logged_in}}
+    <a class="nav-link" href="/logout">Log out</a>
+    {{else}}
     <a class="nav-link" href="/login">Log in</a>
-    {{/if}}
-    {{#if !logged_in}}
-    <a class="nav-link" href="#">Log out</a>
-    {{/if}} --}}
+    {{/if}} 
 
 
   </nav>
