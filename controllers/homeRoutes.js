@@ -61,6 +61,7 @@ res.render('login');
 
 // get an individual post in detail by clicking on it
 router.get('/post/:id', async (req, res) => {
+    console.log(req.params.id);
     try {
         //we are searching for an individual post based on which one the user clicked on
         //homepage.js handles the click event which triggers this request
