@@ -59,6 +59,34 @@ if(req.session.logged_in) {
 res.render('login');
 });
 
+// get an individual post in detail by clicking on it
+router.get('/post/:id', async (req, res) => {
+    try {
+        //we are searching for an individual post based on which one the user clicked on
+        //homepage.js handles the click event which triggers this request
+      const postData = await Post.findByPk(req.params.id, {
+        include: [
+          {
+            model: User,
+            attributes: ['name'],
+          },
+          {
+            //we also want to be able to access the comments
+            model: Comment,
+          },
+        ],
+      });
+  
+      const post = postData.get({ plain: true });
+      console.log(post);
+      res.render('viewPost', {
+        post,
+        logged_in: req.session.logged_in
+      });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 
 
@@ -80,25 +108,3 @@ module.exports = router;
 //set up form to update past posts
 
 
-//get an individual post
-// router.get('/project/:id', async (req, res) => {
-//     try {
-//       const projectData = await Project.findByPk(req.params.id, {
-//         include: [
-//           {
-//             model: User,
-//             attributes: ['name'],
-//           },
-//         ],
-//       });
-  
-//       const project = projectData.get({ plain: true });
-  
-//       res.render('project', {
-//         ...project,
-//         logged_in: req.session.logged_in
-//       });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
