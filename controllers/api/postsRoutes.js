@@ -18,4 +18,29 @@ try {
 }
 });
 
+//this is a delete request to the /api/posts/:id route
+//it will take in an id from the data-id associated with the delete button for the specific post which had a delete button clicked
+router.delete('/:id', withAuth, async (req, res) => {
+try{
+    const postData = await Post.destroy({
+        //we are deleting the post which has the id associated with the post we clicked to delete which is also associated with our user who is signed in
+        where: {
+            id: req.params.id,
+            user_id: req.session.user_id
+        },
+    });
+
+    if(!postData){
+        res.status(404).json({message: "No post was found with this id."});
+        return;
+    }
+    
+    res.status(200).json(postData);
+
+} catch (err){
+    res.status(500).json(err);
+
+}
+});
+
 module.exports = router;

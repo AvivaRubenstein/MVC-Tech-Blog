@@ -13,7 +13,9 @@
         <button type="submit" class="btn">Create Post</button>
       </form>
     </div>
+    <div class="col post-list">
     {{#if user.posts.length}}
+    <h3>Your Existing Blog Posts: </h3>
     {{#each user.posts as |post| }}
       <p>{{post.title}}</p>
       <p>{{post.content}}</p>
@@ -21,8 +23,10 @@
       {{#if user.comments.length}}
       <p>Posted on {{user.comments.content}}</p>
       {{/if}}
+      <button class="btn" data-id="{{post.id}}">DELETE</button>
     {{/each}}
     {{/if}}
+    </div>
     </div>
   </div>
 </div>
