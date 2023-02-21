@@ -37,12 +37,13 @@ try{
     });
     //data serialization to get only the userData we want to target
     const user = userData.get({plain: true});
-    console.log(userData);
+    console.log(user);
     //we are rendering the dashboard page and passing in all the values from the user array and the logged in status
     res.render('dashboard', {
         ...user,
         logged_in: true
     });
+    
     
 } catch(err){
     res.status(500).json(err);
