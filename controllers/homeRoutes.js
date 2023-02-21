@@ -40,7 +40,7 @@ try{
     console.log(user);
     //we are rendering the dashboard page and passing in all the values from the user array and the logged in status
     res.render('dashboard', {
-        ...user,
+        user,
         logged_in: true
     });
     

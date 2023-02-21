@@ -1,16 +1,17 @@
 <div class="container">
    
   <div class="row">
-    {{#each user as |user|}}
+<p>Hello</p>
     <div class="col">
          <h2>{{user.name}}</h2>
     {{#if user.posts.length}}
-      <p>{{user.post.title}}</p>
-      <p>{{user.post.content}}</p>
+    {{#each user.posts as |post| }}
+      <p>{{post.title}}</p>
+      <p>{{post.content}}</p>
       <p>Posted on {{format_date post.date_created}}</p>
       <p>Posted on {{user.comment.content}}</p>
+    {{/each}}
     {{/if}}
     </div>
-    {{/each}}
   </div>
 </div>
