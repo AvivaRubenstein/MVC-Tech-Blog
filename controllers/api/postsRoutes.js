@@ -19,7 +19,7 @@ try {
 });
 
 //this is a delete request to the /api/posts/:id route
-//it will take in an id from the data-id associated with the delete button for the specific post which had a delete button clicked
+//it will take in an id from the data-id associated with the delete button for the specific post which had a delete button clicked --using dashboard.js functionality
 router.delete('/:id', withAuth, async (req, res) => {
 try{
     const postData = await Post.destroy({
@@ -34,7 +34,7 @@ try{
         res.status(404).json({message: "No post was found with this id."});
         return;
     }
-    
+
     res.status(200).json(postData);
 
 } catch (err){

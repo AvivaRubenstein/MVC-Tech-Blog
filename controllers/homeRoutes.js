@@ -77,9 +77,7 @@ module.exports = router;
 
 //my dashboard: 
 //set up route for PUT request to update own past posts
-//set up route for DELETE request to delete own posts
 //set up form to update past posts
-//set up button to delete past posts
 
 
 //get an individual post
