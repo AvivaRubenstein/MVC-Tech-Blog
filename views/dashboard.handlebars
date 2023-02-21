@@ -1,9 +1,18 @@
 <div class="container">
    
   <div class="row">
-<p>Hello</p>
     <div class="col">
-         <h2>{{user.name}}</h2>
+         <h2>Hello, {{user.name}}!</h2>
+    <div class="col">
+      <h3>Create a new Blog Post: </h3>
+      <form>
+        <label for="post-title">Post title: </label>
+        <input class="form-input" type="text" id="post-title" name="post-title"/>
+        <label for="post-content">Content: </label>
+        <textarea class="form-input" id="post-content" name="post-content"></textarea>
+        <button type="submit" class="btn">Create Post</button>
+      </form>
+    </div>
     {{#if user.posts.length}}
     {{#each user.posts as |post| }}
       <p>{{post.title}}</p>

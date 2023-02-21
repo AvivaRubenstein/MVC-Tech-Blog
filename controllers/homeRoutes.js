@@ -66,10 +66,6 @@ module.exports = router;
 
 
 //TODO:
-//set up login route
-//set up login handlebars page
-//set up login js file to handle login
-//set up withAuth to log user in
 
 //set up js for click event to select one of the blog posts
 //set up route to query for the comments on that post
