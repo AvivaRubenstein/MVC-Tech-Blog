@@ -9,7 +9,9 @@
       <p>{{post.title}}</p>
       <p>{{post.content}}</p>
       <p>Posted on {{format_date post.date_created}}</p>
-      <p>Posted on {{user.comment.content}}</p>
+      {{#if user.comments.length}}
+      <p>Posted on {{user.comments.content}}</p>
+      {{/if}}
     {{/each}}
     {{/if}}
     </div>
