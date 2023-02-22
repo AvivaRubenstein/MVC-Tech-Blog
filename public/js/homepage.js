@@ -9,14 +9,15 @@ const openIndividualPostHandler = async (event) => {
         const response = await fetch(`/post/${id}`, {
             method: 'GET'
         });
-        // if(response.ok) {
-        //     //document.location.replace('/');
-        //    // document.location.reload()
-        // } else {
-        //     alert('Failed to get that post.')
-        // }
+        console.log(response);
+        if(response.ok) {
+            document.location.replace(`/post/${id}`);
+           // document.location.reload()
+        } else {
+            alert('Failed to get that post.')
+        }
     }
 }
 
-const buttonList = document.querySelectorAll('.post-list')
+const buttonList = document.querySelectorAll('.post-list');
 buttonList.forEach(Element => Element.addEventListener('click', openIndividualPostHandler));
