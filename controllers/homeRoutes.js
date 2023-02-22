@@ -74,6 +74,10 @@ router.get('/post/:id', async (req, res) => {
           {
             //we also want to be able to access the comments
             model: Comment,
+            include: [ {
+              model: User,
+              //attributes: ['name'],
+            } ]
           },
         ],
       });
