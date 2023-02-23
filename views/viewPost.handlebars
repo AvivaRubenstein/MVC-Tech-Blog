@@ -20,11 +20,25 @@
             {{#if post.comments.length}}
             {{#each post.comments as |comment|}}
             <div class="card">
-            <h6>{{comment.content}} <br> on {{format_date comment.date_created}}</h6>
+            <h6>{{comment.user.name}}:  {{comment.content}} <br> on {{format_date comment.date_created}}</h6>
+            
             </div>
             {{/each}}
             {{/if}}
             
         </div>
+           <div class="col">
+      <div class="card">
+        <div class="card-body">
+      <h3>Add a Comment: </h3>
+      <form class="new-comment-form">
+        <label for="comment-content">Your Comment: </label>
+        <textarea class="form-input" id="comment-content" name="comment-content"></textarea>
+        <button type="submit" class="btn btn-success new-comment-form" data-id="{{post.id}}">Submit</button>
+      </form>
+    </div>
+    </div>
+    </div>
    </div>
 </div>
+<script src="/js/indivPostPage.js"></script>

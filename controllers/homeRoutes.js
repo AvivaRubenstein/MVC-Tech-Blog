@@ -77,9 +77,6 @@ router.get('/post/:id', async (req, res) => {
             model: Comment,
             include: [ {
               model: User,
-              // where: {
-              //   id: Comment.user_id,
-              // },
               attributes: ['name'],
             } ]
           },
@@ -101,6 +98,7 @@ router.get('/post/:id', async (req, res) => {
     }
   });
 
+  
 
 
 module.exports = router;
