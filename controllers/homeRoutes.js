@@ -65,7 +65,8 @@ router.get('/post/:id', async (req, res) => {
     try {
         //we are searching for an individual post based on which one the user clicked on
         //homepage.js handles the click event which triggers this request
-      const postData = await Post.findByPk(req.params.id, {
+      const postData = await Post.findByPk(req.params.id, 
+        {
         include: [
           {
             model: User,
@@ -76,14 +77,21 @@ router.get('/post/:id', async (req, res) => {
             model: Comment,
             include: [ {
               model: User,
-              //attributes: ['name'],
+              // where: {
+              //   id: Comment.user_id,
+              // },
+              attributes: ['name'],
             } ]
           },
         ],
-      });
+      }
+      );
+     
   
       const post = postData.get({ plain: true });
       console.log(post);
+
+
       res.render('viewPost', {
         post,
         logged_in: req.session.logged_in
