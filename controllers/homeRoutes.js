@@ -15,7 +15,7 @@ try{
     });
 
     const posts = postData.map((post) => post.get({plain: true}));
-    console.log(posts)
+    // console.log(posts)
     res.render('homepage', {
         posts,
         //we are passing in logged_in status from session so that we can conditionally render the page with a login/logout button
@@ -33,7 +33,15 @@ try{
     //we are finding the user by their session user id, and getting all posts associated with that user's account
     const userData = await User.findByPk(req.session.user_id, {
         attributes: {exclude: ['password']},
-        include:[{model: Post}, {model: Comment}],
+        include:[{model: Post,
+                  include: [{
+                    model: Comment,
+                        include: [{
+                          model: User
+                        }]
+                  }]
+            }, 
+          ],
     });
     //data serialization to get only the userData we want to target
     const user = userData.get({plain: true});
@@ -83,15 +91,14 @@ router.get('/post/:id', async (req, res) => {
         ],
       }
       );
-     
   
       const post = postData.get({ plain: true });
-      console.log(post);
-
 
       res.render('viewPost', {
         post,
-        logged_in: req.session.logged_in
+        logged_in: req.session.logged_in,
+        user_id: req.session.user_id
+        
       });
     } catch (err) {
       res.status(500).json(err);

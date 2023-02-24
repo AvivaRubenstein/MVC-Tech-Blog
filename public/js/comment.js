@@ -10,7 +10,7 @@ const newFormHandler = async (event) => {
         post_id = event.target.getAttribute('data-id');
        
 }
-console.log(post_id);
+
     if (content) {
       const response = await fetch(`/api/comment`, {
         method: 'POST',

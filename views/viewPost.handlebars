@@ -21,12 +21,12 @@
             {{#each post.comments as |comment|}}
             <div class="card">
             <h6>{{comment.user.name}}:  {{comment.content}} <br> on {{format_date comment.date_created}}</h6>
-            
             </div>
             {{/each}}
             {{/if}}
             
         </div>
+    {{#if logged_in}}
            <div class="col">
       <div class="card">
         <div class="card-body">
@@ -39,6 +39,15 @@
     </div>
     </div>
     </div>
+    {{else}}
+    <div class="col">
+        <div class="card-body">
+            <h5>To add a comment, log in!</h5>
+        </div>
+    </div>
+    {{/if}}
    </div>
 </div>
+{{#if logged_in}}
 <script src="/js/comment.js"></script>
+{{/if}}
