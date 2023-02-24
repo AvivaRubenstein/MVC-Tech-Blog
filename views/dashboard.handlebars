@@ -31,7 +31,8 @@
       <p class="card-text">{{post.content}}</p>
       <h6 class="card-subtitle">Posted on {{format_date post.date_created}}</h6>
 
-      <button type="submit" class="btn btn-danger" data-id="{{post.id}}">DELETE</button>
+      <button  type="submit" class="btn btn-danger del-btn" data-id="{{post.id}}">DELETE</button>
+      <button id= "update-btn" type="submit" class="btn btn-success" data-id="{{post.id}}">UPDATE POST</button>
 
        {{#if post.comments.length}}
        <div class="card">
