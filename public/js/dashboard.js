@@ -19,7 +19,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to create new post');
+        alert(response.statusText);
       }
     }
   };
@@ -35,10 +35,24 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/dashboard');
       } else {
-        alert('Failed to delete the post');
+        alert(response.statusText);
       }
     }
   };
+
+  const updateButtonHandler = async (event) =>{
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
+  
+      const response = await fetch(`/dashboard/post/${id}`, {
+        method: 'GET',
+  });
+  if(response.ok){
+    document.location.replace(`/dashboard/post/${id}`);
+  } else {
+    alert(response.statusText);
+  }}
+  }
   
   document
     .querySelector('.new-post-form')
@@ -48,4 +62,9 @@ const newFormHandler = async (event) => {
     for (i of delBtns){
       i.addEventListener('click', delButtonHandler);
     }
+
+  let updateBtns = document.querySelectorAll('.update-btn');
+  for (i of updateBtns){
+    i.addEventListener('click',updateButtonHandler )
+  }
    

@@ -106,6 +106,47 @@ router.get('/post/:id', async (req, res) => {
   });
 
   
+  // get an individual post in detail by clicking on it
+  //this get route is for the dashboard page 
+  //when the user clicks to update a specific post they have written, their post will be populated on a page for them to edit
+  //if they choose to update, a put request will be sent to update it
+router.get('/dashboard/post/:id', async (req, res) => {
+  console.log(req.params.id);
+  try {
+      //we are searching for an individual post based on which one the user clicked on
+      //homepage.js handles the click event which triggers this request
+    const postData = await Post.findByPk(req.params.id, 
+      {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+        {
+          //we also want to be able to access the comments
+          model: Comment,
+          include: [ {
+            model: User,
+            attributes: ['name'],
+          } ]
+        },
+      ],
+    }
+    );
+
+    const post = postData.get({ plain: true });
+console.log(post);
+    res.render('updateOrDeletePost', {
+      post,
+      logged_in: req.session.logged_in,
+      user_id: req.session.user_id
+      
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 
 
 module.exports = router;

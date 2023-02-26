@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="card">
+            <form class="new-post-form">
+        <label for="post-title">Post title: </label>
+        <input class="form-input" type="text" id="post-title" name="post-title" value="{{post.title}}"/>
+        <label for="post-content">Content: </label>
+        <textarea class="form-input" id="post-content" name="post-content" >{{post.content}}</textarea>
+
+
+        <button  id= "del-btn" type="submit" class="btn btn-danger " data-id="{{post.id}}">DELETE</button>
+        <button id= "update-btn" type="submit" class="btn btn-success" data-id="{{post.id}}">UPDATE POST</button>
+       
+      </form>
+       
+        </div>
+         </div>
+         </div>
+  <script src="/js/dashboard.js"></script>      
+<script src="/js/updateOrDeletePost.js"></script>

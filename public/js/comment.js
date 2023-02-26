@@ -23,7 +23,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace(`/post/${post_id}`);
       } else {
-        alert('Failed to create new comment');
+        alert(response.statusText);
       }
     }
   };

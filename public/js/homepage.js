@@ -13,7 +13,7 @@ const openIndividualPostHandler = async (event) => {
             //the detailed info is rendered at /post/:id, but we need to redirect the user there so they can see it
             document.location.replace(`/post/${id}`);
         } else {
-            alert('Failed to get that post.')
+            alert(response.statusText);
         }
     }
 }
