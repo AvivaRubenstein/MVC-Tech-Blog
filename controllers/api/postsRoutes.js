@@ -18,6 +18,29 @@ try {
 }
 });
 
+//put request to update a user's post
+// route: /api/posts/id
+router.put('/:id', withAuth, async (req, res)=> {
+try{
+    const updatedPost = await Post.update(
+        {
+        
+            title: req.body.title,
+            content: req.body.content,
+        },
+        {
+        where: {
+            id: req.params.id,
+            user_id: req.session.user_id
+        }},
+    );
+    res.status(200).json(updatedPost);
+} catch (err){
+res.status(400).json(err);
+console.log(err);
+}
+});
+
 //this is a delete request to the /api/posts/:id route
 //it will take in an id from the data-id associated with the delete button for the specific post which had a delete button clicked --using dashboard.js functionality
 router.delete('/:id', withAuth, async (req, res) => {
