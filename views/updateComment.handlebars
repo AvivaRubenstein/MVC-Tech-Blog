@@ -2,15 +2,13 @@
     <div class="row">
         <div class="col">
             <div class="card">
-            <form class="new-post-form">
-        <label for="post-title">Post title: </label>
-        <input class="form-input" type="text" id="post-title" name="post-title" value="{{post.title}}"/>
-        <label for="post-content">Content: </label>
-        <textarea class="form-input" id="post-content" name="post-content" >{{post.content}}</textarea>
+            <form class="update-comment-form" data-id="{{comment.post_id}}">
+        <label for="comment-content">Content: </label>
+        <textarea class="form-input" id="comment-content" name="comment-content" >{{comment.content}}</textarea>
 
         <div class="col">
-        <button  id= "del-btn" type="submit" class="btn btn-danger " data-id="{{post.id}}">DELETE</button>
-        <button id= "update-btn" type="submit" class="btn btn-success" data-id="{{post.id}}">UPDATE POST</button>
+        <button  id= "del-btn" type="submit" class="btn btn-danger " data-id="{{comment.id}}">DELETE</button>
+        <button id= "update-btn" type="submit" class="btn btn-success" data-id="{{comment.id}}">UPDATE POST</button>
        
       </form>
        
@@ -19,4 +17,4 @@
          </div>
          </div>
     
-<script src="/js/updateOrDeletePost.js"></script>
+<script src="/js/updateComment.js"></script>
