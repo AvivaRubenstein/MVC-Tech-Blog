@@ -93,7 +93,8 @@ router.get('/post/:id', async (req, res) => {
       );
   
       const post = postData.get({ plain: true });
-
+      console.log(post);
+      console.log(req.session.user_id);
       res.render('viewPost', {
         post,
         logged_in: req.session.logged_in,
