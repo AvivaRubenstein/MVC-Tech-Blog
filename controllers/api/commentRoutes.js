@@ -66,7 +66,7 @@ const withAuth = require('../../utils/auth');
       });
     
       const comment = commentData.get({ plain: true });
-      console.log(comment);
+      
       res.render('updateComment', {
         comment,
         logged_in: req.session.logged_in,
