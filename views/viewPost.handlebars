@@ -27,8 +27,8 @@
                 helper function --}}
                 {{#if ../logged_in}}
                 {{#if (check_if_user_wrote_comment comment.user_id ../user_id)}}
-                <button type="submit" class="btn btn-info update-comment-btn">Update Comment</button>
-                <button type="submit" class="btn btn-danger delete-comment-btn">Delete Comment</button>
+                <button type="submit" class="btn btn-info update-comment-btn" data-id="{{comment.id}}">Update Comment</button>
+                <button type="submit" class="btn btn-danger delete-comment-btn" data-id="{{comment.id}}">Delete Comment</button>
                 {{/if}}
                 {{/if}}
             </div>

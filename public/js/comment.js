@@ -28,26 +28,32 @@ const newFormHandler = async (event) => {
     }
   };
   
-//   const delButtonHandler = async (event) => {
-//     if (event.target.hasAttribute('data-id')) {
-//       const id = event.target.getAttribute('data-id');
+  const deleteCommentButtonHandler = async (event) => {
+    if (event.target.hasAttribute('data-id')) {
+      const id = event.target.getAttribute('data-id');
   
-//       const response = await fetch(`/api/posts/${id}`, {
-//         method: 'DELETE',
-//       });
+      const response = await fetch(`/api/comment/${id}`, {
+        method: 'DELETE',
+      });
   
-//       if (response.ok) {
-//         document.location.replace('/dashboard');
-//       } else {
-//         alert('Failed to delete the post');
-//       }
-//     }
-//   };
+      if (response.ok) {
+        location.reload();
+      } else {
+        alert('Failed to delete the comment');
+      }
+    }
+  };
   
   document
     .querySelector('.new-comment-form')
     .addEventListener('submit', newFormHandler);
   
-//   document
-//     .querySelector('.post-list')
-//     .addEventListener('click', delButtonHandler);
+    // var updateBtn = document.querySelectorAll('.update-comment-btn');
+    // for (i of updateBtn){
+    //   i.addEventListener("click", updateCommentButtonHandler);
+    // }
+    
+    var deleteBtn = document.querySelectorAll('.delete-comment-btn');
+    for (i of deleteBtn){
+      i.addEventListener("click", deleteCommentButtonHandler)
+    }

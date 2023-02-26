@@ -19,4 +19,20 @@ const withAuth = require('../../utils/auth');
   }
   });
 
+  //delete a specific comment
+  router.delete('/:id', withAuth, async (req, res) => {
+    try {
+      const delComment = await Comment.destroy({
+        where: {
+          id: req.params.id,
+          user_id: req.session.user_id
+      },
+      });
+      res.status(200).json(delComment);
+      
+  } catch (err){
+      res.status(400).json(err);
+  }
+  });
+
   module.exports = router;
