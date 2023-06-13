@@ -1,12 +1,14 @@
 :root{
     --caribbean-current: #197278;
     --medium-blue: #0091AD;
+    --light-blue: #84C0C6;
     --deep-blue: #122F68;
     --beige: #CDD9BF;
     --light-brown: #93827F;
     --pale-lavendar: #DCE6F9;
 
 }
+/* styling for main.handlebars: */
 .navbar{
     background-color: var(--caribbean-current);
     
@@ -23,6 +25,7 @@
     text-shadow: 2px 2px var(--deep-blue);
     font-weight: bolder;
 }
+/* styling for homepage: */
 .card-body.posts {
 margin-top: 6px;
 background-color: var(--pale-lavendar);
@@ -34,4 +37,15 @@ button.post-list.btn {
 background-color: var(--medium-blue);
 color: white;
 border-radius: 15px;
+}
+.post-title{
+font-size: x-large;
+}
+.post-content{
+font-size: large;
+}
+/* styling for viewPost: */
+.comment-card {
+background-color: var(--light-blue);
+margin-top: 4px;
 }
