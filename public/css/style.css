@@ -1,0 +1,37 @@
+:root{
+    --caribbean-current: #197278;
+    --medium-blue: #0091AD;
+    --deep-blue: #122F68;
+    --beige: #CDD9BF;
+    --light-brown: #93827F;
+    --pale-lavendar: #DCE6F9;
+
+}
+.navbar{
+    background-color: var(--caribbean-current);
+    
+}
+.nav-link {
+    color: var(--pale-lavendar);
+}
+.nav-link:hover{
+    color: var(--beige);
+    text-shadow: 2px 2px var(--deep-blue)
+}
+.navbar-brand{
+    color: var(--pale-lavendar);
+    text-shadow: 2px 2px var(--deep-blue);
+    font-weight: bolder;
+}
+.card-body.posts {
+margin-top: 6px;
+background-color: var(--pale-lavendar);
+border-style:inset;
+border-width: 2px;
+border-color: var(--medium-blue);
+}
+button.post-list.btn {
+background-color: var(--medium-blue);
+color: white;
+border-radius: 15px;
+}
