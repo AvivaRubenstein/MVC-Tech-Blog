@@ -11,6 +11,7 @@
 /* styling for main.handlebars: */
 .navbar{
     background-color: var(--caribbean-current);
+    margin-bottom: 10px;
     
 }
 .nav-link {
@@ -27,7 +28,7 @@
 }
 /* styling for homepage: */
 .card-body.posts {
-margin-top: 6px;
+margin-top: 10px;
 background-color: var(--pale-lavendar);
 border-style:inset;
 border-width: 2px;
@@ -44,8 +45,39 @@ font-size: x-large;
 .post-content{
 font-size: large;
 }
+.card.post-container{
+    border: none;
+}
+
 /* styling for viewPost: */
 .comment-card {
 background-color: var(--light-blue);
 margin-top: 4px;
+}
+/* styling for login page: */
+.form.login-form, .form.signup-form {
+    text-align: center;
+    background-color: var(--pale-lavendar);
+    border-style: inset;
+    border-width: 3px;
+    border-color: var(--light-brown);
+    border-radius: 15px;
+    margin: 15px;
+    padding: 30px;
+}
+.form.login-form:hover, .form.signup-form:hover{
+    box-shadow: 4px 4px var(--medium-blue);
+} 
+.btn.form-btn {
+    margin-top: 9px;
+    background-color: var(--light-blue);
+    border-radius: 20px;
+}
+.btn.form-btn:hover {
+    background-color: var(--medium-blue);
+    box-shadow: 2px 2px var(--deep-blue);
+    color: white;
+}
+.form-group{
+    margin-top: 9px;
 }
