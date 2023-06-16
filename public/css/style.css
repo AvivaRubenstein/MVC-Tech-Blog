@@ -9,6 +9,9 @@
     --pale-lavendar: #DCE6F9;
     --melon: #D9A698;
     --brown-sugar: #C06E52;
+    --olivine: #94AA74;
+    --verdigris: #26B0BA;
+    --myrtle-green: #3A797E;
 
 }
 /* styling for main.handlebars: */
@@ -61,9 +64,46 @@ font-size: large;
 
 /* styling for viewPost: */
 .comment-card {
-background-color: var(--light-blue);
+background-color: var(--lighter-blue);
 margin-top: 4px;
 }
+.update-comment-btn {
+    background-color: var(--light-blue);
+}
+.update-comment-btn:hover {
+    background-color: var(--caribbean-current);
+    color:white;
+    box-shadow: 3px 3px var(--deep-blue)
+}
+.delete-comment-btn{
+    background-color: var(--melon);
+}
+.delete-comment-btn:hover{
+    background-color: var(--brown-sugar);
+    color: white;
+    box-shadow: 3px 3px var(--light-brown);
+}
+.delete-comment-btn, .update-comment-btn{
+    padding: 5px;
+    /* top/bottom, left/right -- here we are making a larger margin L/R to stop the buttons from taking/filling up so much horizontal space*/
+    margin: 6px 30px;
+}
+.add-comment-card {
+    text-align: center;
+    margin: 6px;
+    padding: 35px;
+    background-color: var(--pale-lavendar);
+}
+.submit-comment-btn {
+    background-color: var(--myrtle-green);
+    color: white;
+    border-radius: 25px;;
+}
+.submit-comment-btn:hover {
+    background-color: var(--verdigris);
+    box-shadow: 3px 3px var(--olivine);
+}
+
 /* styling for login page: */
 .form.login-form, .form.signup-form {
     text-align: center;
@@ -133,7 +173,6 @@ margin-top: 4px;
 .post-card {
     display: block;
     text-align: center;
-    /* top/bottom, left/right */
     margin: 10px;
     padding: 5px;
     background-color: var(--lighter-blue);
@@ -172,4 +211,10 @@ margin-top: 4px;
 #del-btn:hover{
     background-color: var(--brown-sugar);
     color: white;
+}
+/* update comment form card:  */
+.update-comment-card{
+    margin: 15px;
+    padding: 35px;
+    background-color: var(--lighter-blue);
 }

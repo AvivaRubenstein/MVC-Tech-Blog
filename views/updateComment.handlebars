@@ -1,12 +1,12 @@
 <div class="container">
     <div class="row">
-        <div class="col">
-            <div class="card">
+        <div class="col-6">
+            <div class="card update-comment-card">
             <form class="update-comment-form" data-id="{{comment.post_id}}">
         <label for="comment-content">Content: </label>
         <textarea class="form-input" id="comment-content" name="comment-content" >{{comment.content}}</textarea>
 
-        <div class="col">
+        
         <button  id= "del-btn" type="submit" class="btn btn-danger " data-id="{{comment.id}}">DELETE</button>
         <button id= "update-btn" type="submit" class="btn btn-success" data-id="{{comment.id}}">UPDATE POST</button>
        

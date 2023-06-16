@@ -23,8 +23,8 @@
                 helper function --}}
                 {{#if ../logged_in}}
                 {{#if (check_if_user_wrote_comment comment.user_id ../user_id)}}
-                <button type="submit" class="btn btn-info update-comment-btn" data-id="{{comment.id}}">Update Comment</button>
-                <button type="submit" class="btn btn-danger delete-comment-btn" data-id="{{comment.id}}">Delete Comment</button>
+                <button type="submit" class="btn  update-comment-btn" data-id="{{comment.id}}">Update Comment</button>
+                <button type="submit" class="btn  delete-comment-btn" data-id="{{comment.id}}">Delete Comment</button>
                 {{/if}}
                 {{/if}}
             </div>
@@ -34,15 +34,13 @@
         </div>
         {{#if logged_in}}
         <div class="col">
-            <div class="card">
-                <div class="card-body">
+            <div class="card add-comment-card">
                     <h3>Add a Comment: </h3>
                     <form class="new-comment-form" data-id="{{post.id}}">
                         <label for="comment-content">Your Comment: </label>
                         <textarea class="form-input" id="comment-content" name="comment-content"></textarea>
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn submit-comment-btn">Submit</button>
                     </form>
-                </div>
             </div>
         </div>
         {{else}}
