@@ -140,3 +140,29 @@ margin-top: 4px;
 .commenter-name {
     font-weight: bold ;
 }
+
+/* update or delete post page styling:  */
+#form-card{
+    background-color: var(--pale-lavendar);
+    text-align: center;
+    padding: 15px;
+}
+#update-btn, #del-btn {
+    margin-top: 10px;
+}
+#update-btn{
+    background-color: var(--light-blue);
+    color: black;
+}
+#update-btn:hover{
+    background-color: var(--deep-blue);
+    color: white;
+}
+#del-btn{
+    background-color: var(--melon);
+    color: black;
+}
+#del-btn:hover{
+    background-color: var(--brown-sugar);
+    color: white;
+}
