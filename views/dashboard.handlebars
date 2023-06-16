@@ -4,57 +4,49 @@
     <div class="col">
          <h2>Hello, {{user.name}}!</h2>
     <div class="col">
-      <div class="card">
-        <div class="card-body">
-      <h3>Create a new Blog Post: </h3>
+      <div class="card create-post">
+      <h3>Create A New Blog Post: </h3>
       <form class="new-post-form">
+        <div class="form-group">
         <label for="post-title">Post title: </label>
         <input class="form-input" type="text" id="post-title" name="post-title"/>
+        </div>
+        <div class="form-group">
         <label for="post-content">Content: </label>
         <textarea class="form-input" id="post-content" name="post-content"></textarea>
-        <button type="submit" class="btn btn-success">Create Post</button>
+        </div>
+        <button type="submit" class="btn create-post">Create Post</button>
+        
       </form>
     </div>
     </div>
     </div>
     </div>
     
-    <div class="col">
     {{#if user.posts.length}}
-    </div>
     <h3>Your Existing Blog Posts: </h3>
-    <div class="col post-list">
+    <div class="row post-list">
     {{#each user.posts as |post| }}
-    <div class ="card">
-      <div class="card-body">
+    <div class ="card post-card col-5">
       <h4 class="card-title">{{post.title}}</h4>
       <p class="card-text">{{post.content}}</p>
       <h6 class="card-subtitle">Posted on {{format_date post.date_created}}</h6>
 
-      <button  type="submit" class="btn btn-danger del-btn" data-id="{{post.id}}">DELETE</button>
-      <button  type="submit" class="btn btn-success update-btn" data-id="{{post.id}}">UPDATE POST</button>
+      <button  type="submit" class="btn del-btn" data-id="{{post.id}}">DELETE</button>
+      <button  type="submit" class="btn update-btn" data-id="{{post.id}}">UPDATE POST</button>
 
        {{#if post.comments.length}}
-       <div class="card">
-        <div class="card-body">
-          <h6>Comments:</h6>
-        </div>
-       </div>
+       <div class="dash-comment-card">
+          <h5 class="comment-heading">Comments:</h6>
         {{#each post.comments as |comment|}}
-        <div class="card">
-      <div class="card-body">
-      <div>{{comment.user.name}} wrote: {{comment.content}}</div>
-      </div>
-      </div>
+      <div class="card dash-comment-card dash-comment"> <span class="commenter-name">{{comment.user.name}}:</span>  {{comment.content}}</div>
         {{/each}}
+      </div>
       {{/if}}
-
-    </div>
     </div>
     {{/each}}
+    </div>
     {{/if}}
-    </div>
-    </div>
   </div>
 </div>
 <script src="/js/dashboard.js"></script>

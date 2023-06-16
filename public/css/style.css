@@ -2,10 +2,13 @@
     --caribbean-current: #197278;
     --medium-blue: #0091AD;
     --light-blue: #84C0C6;
+    --lighter-blue: #C7E3E5;
     --deep-blue: #122F68;
     --beige: #CDD9BF;
     --light-brown: #93827F;
     --pale-lavendar: #DCE6F9;
+    --melon: #D9A698;
+    --brown-sugar: #C06E52;
 
 }
 /* styling for main.handlebars: */
@@ -80,4 +83,60 @@ margin-top: 4px;
 }
 .form-group{
     margin-top: 9px;
+}
+
+/* styling for dashboard page: */
+.card.create-post {
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 18px;
+    background-color: var(--pale-lavendar);
+}
+.card.create-post:hover {
+    box-shadow: 4px 4px var(--deep-blue);
+}
+.btn.create-post {
+    background-color: var(--medium-blue);
+    color: white;
+    border-radius: 20px;
+}
+.btn.create-post:hover {
+    background-color: var(--deep-blue);
+} 
+.del-btn, .update-btn{
+    padding: 5px;
+    margin-top: 6px;
+}
+.del-btn {
+    background-color: var(--melon);
+}
+.del-btn:hover {
+    background-color: var(--brown-sugar);
+    color: white;
+}
+.update-btn {
+    background-color: var(--medium-blue);
+    color: white;
+}
+.update-btn:hover {
+    background-color: var(--deep-blue);
+    color: white;
+}
+.post-card {
+    display: block;
+    text-align: center;
+    /* top/bottom, left/right */
+    margin: 10px;
+    padding: 5px;
+    background-color: var(--lighter-blue);
+}
+.comment-heading {
+    margin-top: 10px;
+}
+.dash-comment {
+    text-align: left;
+}
+.commenter-name {
+    font-weight: bold ;
 }
